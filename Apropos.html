@@ -5,6 +5,7 @@
     <title>Classique</title>
     <link rel="shortcut icon" href="assets/images/logo_couleur.jpg">
     <link rel="stylesheet" type="text/css" href="assets/style.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 </head>
 <body>
 <div id="container">
@@ -19,7 +20,7 @@
             <nav id="menu" class="show_menu">
                 <ul id="main-menu">
                     <li><a href="index.html#menu">Accueil</a></li>
-                    <li><a href="">Compositeurs</a></li>
+                    <li><a href="Compositeur.php">Compositeurs</a></li>
                     <li><a href="">Interprètes</a></li>
                     <li><a href="">Chefs d'orchestre</a></li>
                     <li><a href="">Orchestres</a></li>
@@ -29,7 +30,32 @@
             </nav>
         </div>
     </header>
+    <div id="content">
+        <p>Ce site a été developpé par Florent Kirch et Morgane Julien, dans le carde d'un projet Web pour l'IUT informatique de Bordeaux.</p>
+    </div>
 </div>
+<script>
+    jQuery(document).ready(function() {
+        var duration = 500;
+        jQuery(window).scroll(function() {
+            if (jQuery(this).scrollTop() > 100) {
+                // Si un défillement de 100 pixels ou plus.
+                // Ajoute le bouton
+                jQuery('.cRetour').fadeIn(duration);
+            } else {
+                // Sinon enlève le bouton
+                jQuery('.cRetour').fadeOut(duration);
+            }
+        });
 
+        jQuery('.cRetour').click(function(event) {
+            // Un clic provoque le retour en haut animé.
+            event.preventDefault();
+            jQuery('html, body').animate({scrollTop: 0}, duration);
+            return false;
+        })
+    });
+</script>
+<div class="cRetour"></div>
 </body>
 </html>

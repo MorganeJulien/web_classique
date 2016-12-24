@@ -17,11 +17,10 @@
 
                 <h1>site web de type e-commerce</h1>
             </div>
-
             <nav id="menu" class="show_menu">
                 <ul id="main-menu">
                     <li><a href="index.html#menu">Accueil</a></li>
-                    <li><a href="Compositeur.php">Compositeurs</a></li>
+                    <li><a href="">Compositeurs</a></li>
                     <li><a href="">Interprètes</a></li>
                     <li><a href="">Chefs d'orchestre</a></li>
                     <li><a href="">Orchestres</a></li>
@@ -32,11 +31,25 @@
         </div>
     </header>
     <div id="content">
-        <p>Ce site donne accès à la base de donnée web_Classique comprenant 9129 enregistements issues de 445 albums, associées à 2131 oeuvres de 254 compositeurs interprétés par 370 interprètes différents.</p>
+        <?php
+        // Paramètres de connexion
+        $driver = 'sqlsrv';
+        $host = 'INFO-SIMPLET';
+        $nomDb = 'Classique_Web';
+        $user = 'ETD';
+        $password = 'ETD';
+        // Chaîne de connexion
+        $pdodsn = "$driver:Server=$host;Database=$nomDb";
+        $pdo = new PDO($pdodsn, $user, $password);
+        $query = "Select Nom_Musicien, Prénom_Musicien, Code_Musicien from Musicien where Nom_Musicien LIKE 'B%' order by Nom_Musicien ";
+        foreach($pdo->query($query) as $row){
+            echo '<b>Nom</b> : '.$row['Nom_Musicien'].' '.$row[utf8_decode('Prénom_Musicien')]. "<br>";
+            echo "<img src='photoMusicien.php?Code=".$row['Code_Musicien']."'> <br>";
+        }
+        $pdo=null;
+        ?>
     </div>
-
 </div>
-
 <script>
     jQuery(document).ready(function() {
         var duration = 500;

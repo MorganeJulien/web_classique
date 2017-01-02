@@ -33,7 +33,6 @@
     </header>
 
     <div id="content">
-
         <div id="recherche">
             <form method="post" action="Compositeur_rep.php">
                 <input name="nom" type="text">
@@ -51,7 +50,7 @@
         // Chaîne de connexion
         $pdodsn = "$driver:Server=$host;Database=$nomDb";
         $pdo = new PDO($pdodsn, $user, $password);
-        $query = "Select Nom_Musicien, Prénom_Musicien, Code_Musicien from Musicien where Nom_Musicien LIKE 'B%' order by Nom_Musicien ";
+        $query = "Select Nom_Musicien, Prénom_Musicien, Code_Musicien from Musicien where Nom_Musicien LIKE '%".$_POST['nom']."%' OR Prénom_Musicien LIKE '%".$_POST['nom']."%' order by Nom_Musicien ";
         foreach($pdo->query($query) as $row){
             echo '<b>Nom</b> : '.$row['Nom_Musicien'].' '.$row[utf8_decode('Prénom_Musicien')]. "<br>";
             echo "<img src='photoMusicien.php?Code=".$row['Code_Musicien']."'> <br>";

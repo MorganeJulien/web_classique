@@ -32,14 +32,15 @@
         </div>
     </header>
 
+    <div id="recherche">
+        <form method="post" action="Compositeur_rep.php">
+            <input name="nom" type="text">
+            <button type="submit"> <i class="fa fa-search" aria-hidden="true"> </i> </button>
+        </form>
+    </div>
+
     <div id="content">
 
-        <div id="recherche">
-            <form method="post" action="Compositeur_rep.php">
-                <input name="nom" type="text">
-                <button type="submit"> <i class="fa fa-search" aria-hidden="true"> </i> </button>
-            </form>
-        </div>
 
         <?php
         // Paramètres de connexion

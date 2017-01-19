@@ -59,6 +59,7 @@
     <div id="content">
         <p>Ce site donne accès à la base de donnée web_Classique comprenant 9129 enregistements issues de 445 albums,
             associées à 2131 oeuvres de 254 compositeurs interprétés par 370 interprètes différents.</p>
+        <p> Cette base de donnée appartient à l'IUT Informatique de Bordeaux et est réservé à ses étudiants dans un but purement pédagogique</p>
 
         <p>Ce site a été crée pour faire avancer en compétence les étudiants en IUT Informatique de Bordeaux : Morgane
             Julien et Florent Kirch. </p>

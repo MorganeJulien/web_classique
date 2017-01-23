@@ -59,7 +59,7 @@
         <form method="post" action="Traite_Inscription.php?url=<?php echo $_REQUEST["url"]; ?>">
             <b>Prénom :</b> <input name="Prenom" type="text"/><br/>
             <b>Nom :</b> <input name="Nom" type="text"/><br/>
-            <b>Login :</b> <input name="Login" type="text/><br/>
+            <b>Login :</b> <input name="Login" type="text"/><br/>
             <b>Mot de passe :</b> <input name="Password" type="text"/><br/>
             <input name="Connect" type="submit" value="Connecter"/>
         </form>

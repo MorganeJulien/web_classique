@@ -52,6 +52,9 @@
             echo '<li>';
             echo '<a href="connexion.php?url='.$url.'">Connexion</a>';
             echo '</li>';
+            echo '<li>';
+            echo '<a href="Inscription.php?url=' . $url . '"> Inscription </a>';
+            echo '</li>' ;
         }
         echo '</ul>';
         echo '</div>';
